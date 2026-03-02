@@ -10,6 +10,7 @@ using InterviewPractice.App.Services;
 using InterviewPractice.App.Services.OOPServices;
 
 
+#region encapsulation
 //*******************************************************Encapsulation************************************************//
 // var currentUser = new User()
 // {
@@ -36,28 +37,30 @@ using InterviewPractice.App.Services.OOPServices;
 // }
 
 //*******************************************************Encapsulation************************************************//
+#endregion
 
-
+#region abstraction
 
 //*******************************************************Abstraction**************************************************//
 
 
-// var inMemoryDataSet = new List<User>()
-// {
-//     new User()
-//     {
-//         FirstName = "John",
-//         LastName = "Doe",
-//         AccountType = BankAccountType.Savings
-//     },
-//     new User()
-//     {
-//         FirstName = "Jane",
-//         LastName = "Doe",
-//         AccountType = BankAccountType.Current
-//     }
-// };
-//var usersWithCurrentAccounts = inMemoryDataSet.Where(user => user.AccountType == BankAccountType.Current);
+//  var inMemoryDataSet = new List<User>()
+//  {
+//      new User()
+//      {
+//          FirstName = "John",
+//          LastName = "Doe",
+//          AccountType = BankAccountType.Savings
+//      },
+//      new User()
+//      {
+//          FirstName = "Jane",
+//          LastName = "Doe",
+//          AccountType = BankAccountType.Current
+//      }
+//  };
+//  
+// var usersWithCurrentAccounts = inMemoryDataSet.Where(user => user.AccountType == BankAccountType.Current);
 
 
 //Refactored version
@@ -69,34 +72,32 @@ using InterviewPractice.App.Services.OOPServices;
 //     ? users.Value.Where(user => user.AccountType == BankAccountType.Current) 
 //     : new List<User>();
 //
-
-
-
+//
 // foreach (var user in usersWithCurrentAccounts)
 // {
 //     Console.WriteLine($"First name: {user.FirstName}");
 // }
 
 
-
 //*******************************************************Abstraction**************************************************//
+#endregion
 
-
-
+#region polymorhpism
 
 //*******************************************************Polymorphism*************************************************//
 // Individual user loging in
 
-// var userType = UserType.Individual;
-//
-// // var service = userType switch
-// // {
-// //     UserType.Corporate => (ILogginService)new CorporateLoginService(),
-// //     UserType.Individual => new IndividualLoginService(),
-// //     _ => throw new NotImplementedException()
-// // };
-//     
+//var userType = UserType.Individual;
+
+// var service = userType switch
+// {
+//     UserType.Corporate => (ILogginService)new CorporateLoginService(),
+//     UserType.Individual => new IndividualLoginService(),
+//     _ => throw new NotImplementedException()
+// };
+    
 // var _loginService = new List<ILogginService>() { new CorporateLoginService(), new IndividualLoginService() };
+//
 // var service = _loginService.Where(service => service.Type == userType).FirstOrDefault();
 //
 // if (service is null)
@@ -106,19 +107,19 @@ using InterviewPractice.App.Services.OOPServices;
 
 //*******************************************************Polymorphism*************************************************//
 
+#endregion
 
-
-
+#region inheritance
 
 //*******************************************************Inheritance & Polymorphism***********************************//
 
 // var _paymentServices = new List<IPaymentService>() { new HostedPaymentPageService(), new ScanToPayService() };
+//
 // var _userRepository = new UserRepository();
+//
 // var user = _userRepository.GetUsers().Value.Where(user => user.SessionValid).FirstOrDefault();
 //
-// var userPaymentMethod = PaymentMethod.SecurePage;
-//
-// var userPaymentService = _paymentServices.Where(service => service.PaymentMethod == userPaymentMethod).FirstOrDefault();
+// var userPaymentService = _paymentServices.Where(service => service.PaymentMethod == user.PaymentMethod).FirstOrDefault();
 //
 // var paymentInitiateResponse = userPaymentService.InitiatePayment(user);
 //
@@ -130,5 +131,5 @@ using InterviewPractice.App.Services.OOPServices;
 
 //*******************************************************Inheritance & Polymorphism***********************************//
 
-
+#endregion
 

@@ -8,4 +8,5 @@ public class User
     public string LastName { get; set; }
     public BankAccountType AccountType { get; set; }
     public bool SessionValid { get; set; }
+    public PaymentMethod PaymentMethod { get; set; }
 }

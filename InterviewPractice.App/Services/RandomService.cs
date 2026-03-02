@@ -46,4 +46,40 @@ public class RandomService
 
         return 0;
     }
+
+    public int[] ShelvesThatNeedRestocking(int[] stock, int threshold)
+    {
+        return stock.
+            Select((value, index) => new { value, index }).
+            Where(x => x.value < threshold).
+            Select(x => x.index).
+            ToArray();
+    }
+
+    public string[] ExtractUsername(string[] emails, string domain)
+    {
+        return emails.Where(email => email.Split('@').Last() == domain).Select(email => email.Split('@').First()).ToArray();
+    }
+
+    public LinkedList<int> RemoveDuplicates(LinkedList<int> input)
+    {
+        var listRep = new List<int>();
+        var firstNode = input.First;
+
+        while (firstNode is not null)
+        {
+            listRep.Add(firstNode.Value);
+            firstNode = firstNode.Next;
+        }
+
+        listRep = listRep.Distinct().ToList();
+
+        input = new LinkedList<int>();
+        foreach (var item in listRep)
+        {
+            input.AddLast(item);
+        }
+
+        return input;
+    }
 }

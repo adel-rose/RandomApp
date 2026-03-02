@@ -14,7 +14,8 @@ public class UserRepository
                 FirstName = "John",
                 LastName = "Doe",
                 AccountType = BankAccountType.Savings,
-                SessionValid = true
+                SessionValid = true,
+                PaymentMethod = PaymentMethod.ScanToPay
                 
             },
             new User()
@@ -22,7 +23,8 @@ public class UserRepository
                 FirstName = "Jane",
                 LastName = "Doe",
                 AccountType = BankAccountType.Current,
-                SessionValid = false
+                SessionValid = false,
+                PaymentMethod = PaymentMethod.SecurePage
             }
         };
 
