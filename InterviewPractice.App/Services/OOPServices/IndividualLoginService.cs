@@ -7,11 +7,8 @@ public class IndividualLoginService : ILogginService
 {
     public UserType Type { get; private set; } = UserType.Individual;
     
-    public bool Login(UserType type)
+    public void Login()
     {
-        if (type == UserType.Individual)
-            return true;
-
-        return false;
+       Console.WriteLine("Individual logged in");
     }
 }

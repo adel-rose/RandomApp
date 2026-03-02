@@ -79,36 +79,14 @@ public class AnagramService
                 Value = false
             };
         }
-
-        if (userInput1.Length != userInput2.Length)
-        {
-            return new ResponseWrapper<bool>()
-            {
-                ResponseCode = ResponseCode.OK,
-                Value = false
-            };
-        }
-
+        
         userInput1 = new string(userInput1.OrderBy(x => x).ToArray());
         userInput2 = new string(userInput2.OrderBy(x => x).ToArray());
-
-        //2. Replicate a manual sequential equal
-        for (int i = 0; i < userInput1.Length; i++)
-        {
-            if (userInput1[i] != userInput2[i])
-            {
-                return new ResponseWrapper<bool>()
-                {
-                    ResponseCode = ResponseCode.OK,
-                    Value = false
-                };
-            }
-        }
-
+        
         return new ResponseWrapper<bool>()
         {
             ResponseCode = ResponseCode.OK,
-            Value = true
+            Value = userInput1 == userInput2
         };
     }
 }

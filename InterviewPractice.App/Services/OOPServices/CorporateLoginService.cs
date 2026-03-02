@@ -7,11 +7,8 @@ public class CorporateLoginService : ILogginService
 {
     public UserType Type { get; private set; } = UserType.Corporate;
     
-    public bool Login(UserType type)
+    public void Login()
     {
-        if (type == UserType.Corporate)
-            return true;
-
-        return false;
+        Console.WriteLine("Corporate logged in");
     }
 }

@@ -89,21 +89,21 @@ using InterviewPractice.App.Services.OOPServices;
 
 //var userType = UserType.Individual;
 
-// var service = userType switch
-// {
-//     UserType.Corporate => (ILogginService)new CorporateLoginService(),
-//     UserType.Individual => new IndividualLoginService(),
-//     _ => throw new NotImplementedException()
-// };
+ // var service = userType switch
+ // {
+ //     UserType.Corporate => (ILogginService)new CorporateLoginService(),
+ //     UserType.Individual => new IndividualLoginService(),
+ //     _ => throw new NotImplementedException()
+ // };
     
-// var _loginService = new List<ILogginService>() { new CorporateLoginService(), new IndividualLoginService() };
-//
-// var service = _loginService.Where(service => service.Type == userType).FirstOrDefault();
-//
-// if (service is null)
-//     Console.WriteLine(false);
-//
-// Console.WriteLine($"User logged in: {service.Login(userType)}");
+ // var _loginService = new List<ILogginService>() { new CorporateLoginService(), new IndividualLoginService() };
+ //
+ // var service = _loginService.Where(service => service.Type == userType).FirstOrDefault();
+ //
+ // if (service is null)
+ //     Console.WriteLine(false);
+ //
+ // service.Login();
 
 //*******************************************************Polymorphism*************************************************//
 
@@ -132,4 +132,11 @@ using InterviewPractice.App.Services.OOPServices;
 //*******************************************************Inheritance & Polymorphism***********************************//
 
 #endregion
+
+var _service = new RandomService();
+
+var response = _service.GetFirstNonRepeatingChar("aaaaabbbbbccccde");
+
+Console.Write(response);
+
 

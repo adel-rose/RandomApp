@@ -82,4 +82,34 @@ public class RandomService
 
         return input;
     }
+
+    public string[] RemoveDuplicates(string [] input)
+    {
+        // Must remove duplicates from input
+        // Must preserve order or occurence
+
+        var distinctList = new List<string>();
+        var tempHash = new HashSet<string>();
+
+        foreach (var item in input)
+        {
+            if (tempHash.Add(item))
+            {
+                distinctList.Add(item);
+            }
+        }
+
+        return distinctList.ToArray();
+    }
+
+    public char GetFirstNonRepeatingChar(string input)
+    {
+        foreach (var item in input)
+        {
+            if (input.Where(c => c == item).Count() == 1)
+                return item;
+        }
+
+        return ' ';
+    }
 }
